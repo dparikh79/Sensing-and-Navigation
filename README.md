@@ -19,10 +19,10 @@ Most of my robotics work since then (VI-SLAM, Kalman-filter trackers, the surgic
 
 ## Hardware and data
 
-- **GPS puck** — USB NMEA-0183, 4800 baud, `$GPGGA` sentences (Lab 1)
-- **GNSS-RTK puck** — `$GNGGA` sentences with quality indicator (Lab 2)
-- **VectorNav VN-100** — 9-DOF AHRS, USB serial at 115200 baud, `$VNYMR` ASCII output (Labs 3 and 4)
-- **Northeastern NUANCE autonomous car** — driving platform for the dead-reckoning run (Lab 4)
+- **GPS puck**, USB NMEA-0183, 4800 baud, `$GPGGA` sentences (Lab 1)
+- **GNSS-RTK puck**, `$GNGGA` sentences with quality indicator (Lab 2)
+- **VectorNav VN-100**, 9-DOF AHRS, USB serial at 115200 baud, `$VNYMR` ASCII output (Labs 3 and 4)
+- **Northeastern NUANCE autonomous car**, driving platform for the dead-reckoning run (Lab 4)
 
 Every lab folder ships its raw rosbags so you can re-run the analysis without owning the hardware:
 
@@ -35,8 +35,8 @@ Every lab folder ships its raw rosbags so you can re-run the analysis without ow
 - **NMEA parsing** for `$GPGGA` and `$GNGGA`, including N/S/E/W sign convention and `ddmm.mmmm` to decimal degrees
 - **WGS-84 to UTM** via the `utm` Python package, with zone and band tracked
 - **Allan variance / Allan deviation** on a 5-hour stationary IMU log to read off angle random walk and bias instability (MATLAB live script in `IMU/src/analysis/Lab3AllanDeviation.mlx`)
-- **Magnetometer calibration** — hard-iron offset and soft-iron ellipse-to-circle scaling, with bank and elevation tilt compensation as a pre-step. Around Ruggles the major-axis scale factor came out to **0.69**.
-- **Yaw fusion** — four estimators compared on the same drive: raw IMU yaw, gyro-integrated yaw, magnetometer yaw, and a **complementary filter** combining mag (low-frequency truth) with gyro (high-frequency truth)
+- **Magnetometer calibration**, hard-iron offset and soft-iron ellipse-to-circle scaling, with bank and elevation tilt compensation as a pre-step. Around Ruggles the major-axis scale factor came out to **0.69**.
+- **Yaw fusion**, four estimators compared on the same drive: raw IMU yaw, gyro-integrated yaw, magnetometer yaw, and a **complementary filter** combining mag (low-frequency truth) with gyro (high-frequency truth)
 - **Forward velocity from accelerometer**, with manual bias re-zeroing at known stationary intervals, compared against GPS-derived velocity (raw integration drifted to ~100 m/s of false negative velocity, so this step matters)
 
 ## Sample results
