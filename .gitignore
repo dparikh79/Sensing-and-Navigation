@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+env/
+
+# ROS / catkin
+devel/
+logs/
+*.bag.active
+.catkin_workspace
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install/
+log/
+
+# MATLAB
+*.asv
+*.mex*
+*.slxc
+slprj/
+*.autosave
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local data overrides (uncomment if you want to drop large bags later)
+# *.bag
